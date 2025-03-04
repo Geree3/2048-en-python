@@ -1,3 +1,5 @@
+#2048 GAME
+
 import random as rad
 
 #><
@@ -9,7 +11,7 @@ class Board:
         self.size = board_size
 
         self.active = True
-        self.recursions = 2
+        self.recursions = self.size
 
         self.spawns = spawnsPerMove
 
@@ -82,9 +84,9 @@ class Board:
         randomGen = rad.randint(1, 10)
 
         if(randomGen != 10):
-            self.board[y][x] = 4
-        else:
             self.board[y][x] = 2
+        else:
+            self.board[y][x] = 4
 
     def compressRight(self, rec: 0):
         for y in range(0, self.size):
